@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mascotas</title>
+    <link rel="stylesheet" href="CSS/Productos.css">
+</head>
+
+<body>
+    <header>
+        <div class="divfondo">
+            <br>
+            <br>
+            <br>
+            <br>
+            <div><img class="imglogo" src="LogoPeque.jpg" alt="0"></div>
+            <input class="buscador" type="text" placeholder=" Buscar">
+            <div id="perfil">
+                <a href="auth.html">
+                    <img class="imgperfil"
+                        src="https://previews.123rf.com/images/alekseyvanin/alekseyvanin1704/alekseyvanin170403722/76700719-icono-de-la-l%C3%ADnea-de-usuario-esquema-de-perfil-ilustraci%C3%B3n-de-logotipo-vectorial-pictograma-lineal.jpg"
+                        alt="Perfil">
+                </a>
+                <p class="textPeque"><a href="auth.html">Iniciar sesión</a> | <a
+                        href="auth.html#register-container">Registrarse</a></p>
+            </div>
+        </div>
+        <div id="botonsSup">
+            <a href="index.html"><button class="iniciador">Inicio</button></a>
+            <button class="iniciador" onclick="toggleBtnCateg()">Categorias</button>
+            <button class="iniciador" id="scrollContacto">Contactanos</button>
+        </div>
+    </header>
+    <div id="btnCateg">
+        <button onclick="generarProductos('croquetas')">
+            <img src="data:image/png;base64,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" alt="Croquetas">
+            <p class="pCateg">Croquetas</p>
+        </button>
+    </div>
+    <br>
+    <div class="divTitulos"><br>
+        <h1>Mascotas</h1>
+    </div>
+    <div class="carrito-container" onclick="toggleCarrito()">
+        <img src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png" alt="Carrito de Compras" id="carrito-icono">
+        <span id="contador-carrito">0</span>
+    </div>
+    <div class="divLetra">Croquetas</div>
+    <br><br>
+    <div class="divblanco">
+        <div class="productos" id="lista-productos">
+            <!-- Productos se generan dinámicamente aquí -->
+        </div>
+        <div class="carrito-panel" id="carrito-panel" style="display: none;">
+            <button class="cerrar-carrito" onclick="toggleCarrito()">X</button>
+            <div id="productos-carrito">
+                <!-- Productos agregados al carrito se muestran aquí -->
+            </div>
+            <div id="total-pagar"></div>
+            <button class="agregar-carrito" onclick="pagarCompra()">Pagar Compra</button>
+        </div>
+    </div>
+    <footer id="contac">
+        <p>Direccion Av. Busch #196</p>
+        <p>+591 70549248</p>
+        <p>maxmarketshop2024@gmail.com</p>
+        <p>Jose Alberto Huayhua Villanueva</p>
+        <p>Kevin Enrique Rodriguez Esquivel</p>
+        <p>Paralelo A</p>
+    </footer>
+    <script src="Script/ProdMascotas.js"></script>
+</body>
+
+</html>

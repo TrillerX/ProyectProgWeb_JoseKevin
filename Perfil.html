@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="CSS/Perfil.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Perfil de Usuario</h2>
+            <div class="profile-picture">
+                <img class="imgperfil" src="https://via.placeholder.com/150" alt="Foto de Perfil">
+            </div>
+            <input type="file" id="file-input" class="input-file" accept="image/*">
+            <label for="file-input" class="btn-file">Seleccionar Foto</label>
+            <button type="button" onclick="deleteProfilePic()" class="btn-file">Borrar Foto</button>
+            <form id="edit-profile-form">
+                <input type="text" id="edit-name" placeholder="Nombre Completo">
+                <input type="password" id="edit-password" placeholder="Nueva Contraseña">
+                <input type="password" id="confirm-edit-password" placeholder="Confirmar Contraseña">
+                <button type="button" onclick="updateProfile()">Guardar Cambios</button>
+                <button type="button" onclick="goBack()">Volver a la página anterior</button>
+                <input type="hidden" id="origin" name="origin">
+            </form>
+            <p class="toggle-link" onclick="logout()">Cerrar Sesión</p>
+        </div>
+    </div>
+
+    <script src="Script/Perfil.js"></script>
+</body>
+
+</html>

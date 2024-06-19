@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Autenticación</title>
+    <link rel="stylesheet" href="CSS/auth.css">
+</head>
+
+<body>
+    <div class="container" id="login-container">
+        <div class="form-box">
+            <h2>Iniciar Sesión</h2>
+            <form id="login-form" onsubmit="login(event)">
+                <input type="email" id="login-email" placeholder="Correo Electrónico" required>
+                <input type="password" id="login-password" placeholder="Contraseña" required>
+                <button type="submit">Iniciar Sesión</button>
+            </form>
+            <p class="toggle-link" onclick="toggleForm()">¿No tienes cuenta? Regístrate aquí</p>
+        </div>
+    </div>
+
+    <div class="container" id="register-container" style="display: none;">
+        <div class="form-box">
+            <h2>Registrar</h2>
+            <form id="register-form" onsubmit="register(event)">
+                <input type="text" id="register-name" placeholder="Nombre Completo" required>
+                <input type="email" id="register-email" placeholder="Correo Electrónico" required>
+                <input type="password" id="register-password" placeholder="Contraseña" required>
+                <input type="password" id="confirm-password" placeholder="Confirmar Contraseña" required>
+                <button type="submit">Registrarse</button>
+            </form>
+            <p class="toggle-link" onclick="toggleForm()">¿Ya tienes cuenta? Inicia sesión aquí</p>
+        </div>
+    </div>
+
+    <script src="Script/auth.js"></script>
+</body>
+
+</html>
